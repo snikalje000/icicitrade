@@ -14,6 +14,7 @@ from functools import wraps
 import json
 import os
 from flask_sqlalchemy import SQLAlchemy
+
 import logging
 import sys
 
@@ -104,7 +105,7 @@ def login():
             return redirect(url_for("login"))
         user = bool(User.query.filter_by(
             username=username, password=password).first())
-
+        
         if user:
             session["authenticated"] = True
             session["username"] = username
