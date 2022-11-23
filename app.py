@@ -14,11 +14,13 @@ from functools import wraps
 import json
 import os
 from flask_sqlalchemy import SQLAlchemy
-
+import logging
+import sys
 
 # Initialize the Flask app
 app = Flask(__name__)
-
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 # Load configuration
 app.config.from_object('config.BaseConfig')
 
