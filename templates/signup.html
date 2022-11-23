@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>SignUp</title>
+{% endblock %}
+
+{% block body %}
+  <div class="back">
+
+{% with messages = get_flashed_messages()  %}
+{% if messages %}
+{% for message in messages %}
+<div class="bg-success text-white p-3 text-center">
+      {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+    <div class="div-center">
+
+      <div class="content">
+
+        <h3 style="margin-left: 40px;">SignUp Form</h3>
+        <hr>
+
+        <form class="form" method="POST" action="">
+          <label>Username</label>
+          <input type="text" class="form-control" name="username"><br>
+          <label>Password</label>
+          <input type="password" class="form-control" name="password"><br><br>
+
+          <br>
+          <div class="d-grid gap-2">
+            <input type="submit" class="btn btn-primary btn-block btn-lg" value="SignUp" name="SignUp">
+          </div>
+          <br>
+
+
+        </form>
+
+      </div>
+
+
+      </span>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Reports</title>
+{% endblock %}
+
+{% block head %}
+<script src="{{ url_for('static', filename='js/jquery.json-editor.min.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+<pre id="json-display"></pre>
+
+
+{% endblock %}
+
+{% block script %}
+<script>
+    var editor =new JsonEditor('#json-display', {{data|safe}});
+</script>
+{% endblock %}

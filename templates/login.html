@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block body %}
+          <div class="back">
+            {% with messages = get_flashed_messages()  %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="bg-warning text-center text-white p-3">
+                  {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+           
+            <div class="div-center">
+          
+              <div class="content">
+               
+              <h3 style="margin-left: 40px;">Login Form</h3>
+              <hr>
+                
+              <form class="form" method="POST" action="">
+                <label for="username">Username</label>
+                <input type="text" class="form-control my-1" name="username" id="username"><br>
+                <label for="password">Password</label>
+                 <input type="password" id="password" class="form-control my-1" name="password"><br><br>
+
+                  <div class="d-grid">
+                    <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login" name="Login" >
+                 </div>
+                 <br>
+                 
+        
+                </form>
+          
+              </div>
+          
+          
+              </span>
+            </div>
+{% endblock %}

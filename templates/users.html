@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Users</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center my-4">Users</h1>
+{% with messages = get_flashed_messages()  %}
+{% if messages %}
+{% for message in messages %}
+<div class="bg-info text-center text-white p-3">
+      {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<table class="table my-5 table-hover text-center border">
+    <thead>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Action</th>
+    </thead>
+    {% for user in data %}
+    <tr style="vertical-align: middle;">
+        
+        <td class="border">{{user.username}}</td>
+
+        <td class="border">{{user.password}}</td>
+
+        <td class="border">
+            <a href="{{url_for('delete_user', id=user.id)}}" class="btn btn-danger">
+                Delete
+            </a>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
