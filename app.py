@@ -127,7 +127,7 @@ def logout():
 
 
 @app.route('/')
-@login_required
+
 def index():
     '''Returns a static HTML page'''
     return render_template('index.html')
